@@ -34,20 +34,32 @@ class SeleccionarContextos extends Command
         $this->src = base_path() . '/' . $this->contextoBase;
         $this->path = $this->src;
         $this->mostrarOpciones();
-        
+
 
         return 0;
     }
 
     public function mostrarOpciones($contextoElegido = null)
     {
-        if (!$contextoElegido == null) {
+        if ($contextoElegido != null) {
             $this->info('Has seleccionado: ' . $contextoElegido);
             $this->path = $this->path . '/' . $contextoElegido;
         }
 
         $carpetas = $this->obtenerCarpetas($contextoElegido);
-        $contextoElegido = $this->choice($this->question, $carpetas);
+        
+        // $contextoElegido = $this->choice($this->question, $carpetas);
+
+        $contextoElegido = ($this->components->choice(
+            question: $this->question,
+            choices: $carpetas,
+            default: end($carpetas),
+            multiple: false
+        )
+        );
+        $this->line('');
+        $this->line('Has seleccionado: ' . self::BLUE . $contextoElegido);
+
 
 
         if ($contextoElegido == self::EXIT_OPTION) {
