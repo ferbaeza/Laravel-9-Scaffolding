@@ -2,10 +2,8 @@
 
 namespace Baezeta\Console\Scaffolding\Context;
 
-
 use Illuminate\Console\Command;
 use Baezeta\Console\Scaffolding\Traits\ScaffoldingTrait;
-
 
 class CreateScaffoldind extends Command
 {

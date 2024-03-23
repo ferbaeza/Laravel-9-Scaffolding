@@ -49,12 +49,13 @@ class SeleccionarContextos extends Command
         $this->warn(self::BLUE . 'Estas en la carpeta: ' . self::BLUE . $this->contextoBase);
         $carpetas = $this->obtenerCarpetas($contextoElegido);
 
-        $contextoElegido = ($this->components->choice(
-            question: $this->questionFolder,
-            choices: $carpetas,
-            default: end($carpetas),
-            multiple: false
-        )
+        $contextoElegido = (
+            $this->components->choice(
+                question: $this->questionFolder,
+                choices: $carpetas,
+                default: end($carpetas),
+                multiple: false
+            )
         );
         $this->line('');
 
@@ -64,7 +65,6 @@ class SeleccionarContextos extends Command
         }
         if ($contextoElegido == self::OK_OPTION) {
             return $this->elegirNombreDelContexto();
-            // return Command::SUCCESS;
         }
 
         if (str_contains($contextoElegido, self::CHARACTER)) {

@@ -76,11 +76,11 @@ php artisan zeta:crear-contexto
 
 ![alt text](./docs/img/image-2.png)
 
-![alt text](./docs/img/image-4.png)
+![alt text](./docs/img/image-3.png)
 
 
-![alt text](./docs/img/image-5.png)
-
+**Voila** la estructura de carpetas esta creada!
+#
 
 
 Espero que te sea de utlidad esta primera version del paquete, link 
