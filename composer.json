@@ -23,13 +23,7 @@
         "tests": "phpunit --color=always --testdox tests/",
         "stan": "vendor/bin/phpstan analyse src --level 5",
         "fixer": "php ./vendor/bin/php-cs-fixer fix src/ --diff",
-        "fixer-test": "php ./vendor/bin/php-cs-fixer fix tests/ --diff",
-        "post-package-install": [
-            "composer stan"
-        ],
-        "post-package-update": [
-            "composer stan"
-        ]
+        "fixer-test": "php ./vendor/bin/php-cs-fixer fix tests/ --diff"
     },
     "license": "MIT",
     "minimum-stability": "stable",

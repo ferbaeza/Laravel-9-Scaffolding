@@ -4,16 +4,16 @@ namespace Baezeta\Console\Scaffolding\Context\Constants;
 
 class ScaffoldingConstanst
 {
-    const APPLICATION = 'Application';
-    const DOMAIN = 'Domain';
-    const COLLECTION = 'Domain/Collection';
-    const ENTITY = 'Domain/Entity';
-    const EXCEPTION = 'Domain/Exception';
-    const INTERFACES = 'Domain/Interfaces';
-    const INFRASTRUCTURE = 'Infrastructure';
-    const BINDINGS = 'Infrastructure/Bindings';
-    const DATASOURCE = 'Infrastructure/Datasource';
-    const HTTP = 'Infrastructure/Http';
+    public const APPLICATION = 'Application';
+    public const DOMAIN = 'Domain';
+    public const COLLECTION = 'Domain/Collection';
+    public const ENTITY = 'Domain/Entity';
+    public const EXCEPTION = 'Domain/Exception';
+    public const INTERFACES = 'Domain/Interfaces';
+    public const INFRASTRUCTURE = 'Infrastructure';
+    public const BINDINGS = 'Infrastructure/Bindings';
+    public const DATASOURCE = 'Infrastructure/Datasource';
+    public const HTTP = 'Infrastructure/Http';
 
     public static function carpetas()
     {

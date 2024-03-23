@@ -3,9 +3,10 @@
 namespace Baezeta\Console\Scaffolding\Context\Commands;
 
 use Illuminate\Console\Command;
+use Baezeta\Console\Scaffolding\Traits\ScaffoldingTrait;
+
 use function Laravel\Prompts\search;
 use function Laravel\Prompts\select;
-use Baezeta\Console\Scaffolding\Traits\ScaffoldingTrait;
 
 class SeleccionarContextos extends Command
 {
@@ -47,15 +48,16 @@ class SeleccionarContextos extends Command
         }
 
         $carpetas = $this->obtenerCarpetas($contextoElegido);
-        
+
         // $contextoElegido = $this->choice($this->question, $carpetas);
 
-        $contextoElegido = ($this->components->choice(
-            question: $this->question,
-            choices: $carpetas,
-            default: end($carpetas),
-            multiple: false
-        )
+        $contextoElegido = (
+            $this->components->choice(
+                question: $this->question,
+                choices: $carpetas,
+                default: end($carpetas),
+                multiple: false
+            )
         );
         $this->line('');
         $this->line('Has seleccionado: ' . self::BLUE . $contextoElegido);

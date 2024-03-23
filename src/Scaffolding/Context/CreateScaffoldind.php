@@ -2,10 +2,8 @@
 
 namespace Baezeta\Console\Scaffolding\Context;
 
-
 use Illuminate\Console\Command;
 use Baezeta\Console\Scaffolding\Traits\ScaffoldingTrait;
-
 
 class CreateScaffoldind extends Command
 {
@@ -31,7 +29,7 @@ class CreateScaffoldind extends Command
         if (($context == null)) {
             $estructureCommand = 'zeta:selecciona-crea-contexto';
             $this->call($estructureCommand);
-            
+
         } else {
             $context = $this->nombreFormateado($context);
             $estructureFolderCommand = 'zeta:contexto-carpetas';

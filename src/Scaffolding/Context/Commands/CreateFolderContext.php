@@ -67,7 +67,7 @@ class CreateFolderContext extends Command
                 continue;
             }
 
-            if ($existeYaLaCarpetaDelContexto == false ) {
+            if ($existeYaLaCarpetaDelContexto == false) {
                 $crearCarpetas = $this->crearCarpeta($this->currentPath, $nombreDeCarpeta);
                 if (!$crearCarpetas) {
                     return false;
