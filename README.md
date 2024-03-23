@@ -94,4 +94,4 @@ Espero que te sea de utlidad esta primera version del paquete, link
 
 **Fernando Baeza**
 *fbaezahurtado@gmail.com* o 
-*baezacode@gmail.com*
+*baezacode@gmail.com*# Laravel-9-Scaffolding

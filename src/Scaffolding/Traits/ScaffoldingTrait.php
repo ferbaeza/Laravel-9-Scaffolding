@@ -5,7 +5,6 @@ namespace Baezeta\Console\Scaffolding\Traits;
 use Exception;
 use Baezeta\Console\Scaffolding\Context\Constants\ScaffoldingConstanst;
 
-
 trait ScaffoldingTrait
 {
     public const BLUE = "\033[1;34m";
