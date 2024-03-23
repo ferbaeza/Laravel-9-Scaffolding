@@ -18,8 +18,16 @@ composer require baezeta/scaffold
 
 Una vez instalado el paquete, necesitaremos incluirlo en el archivo ```Kernel.php``` .
 ``` App\Console\Kernel::class``` para que pueda ser invocado a traves de **Artisan**
-![alt text](./docs/img/kernel.png)
 
+Tal y como se muestra en la imagen incluiremos las tres clases del paquete
+```php
+protected $commands = [
+    CreateScaffoldind::class,
+    CreateFolderContext::class,
+    SeleccionarContextos::class
+];
+```
+![alt text](./docs/img/kernel.png)
 
 Una vez conofigurado buscara una carpeta principal **src/** que tomara como raiz del proyecto, en caso de no tenerla, crear manualmente para tener una base similar a:
 

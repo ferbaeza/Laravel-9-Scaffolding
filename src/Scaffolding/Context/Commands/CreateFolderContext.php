@@ -80,7 +80,7 @@ class CreateFolderContext extends Command
     public function crearCarpeta(string $rootPath, string $nombreDeCarpeta)
     {
         if ($this->crearDirectorio($rootPath . "/" . $nombreDeCarpeta)) {
-            $this->info('Carpeta creada correctamente: ' . $nombreDeCarpeta);
+            // $this->info('Carpeta creada correctamente: ' . $nombreDeCarpeta);
             $this->currentPath = $rootPath . "/" . $nombreDeCarpeta;
             return true;
         }

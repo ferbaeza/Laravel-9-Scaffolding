@@ -2,8 +2,10 @@
 
 namespace Baezeta\Console\Scaffolding\Context;
 
+
 use Illuminate\Console\Command;
 use Baezeta\Console\Scaffolding\Traits\ScaffoldingTrait;
+
 
 class CreateScaffoldind extends Command
 {
@@ -25,19 +27,20 @@ class CreateScaffoldind extends Command
     public function handle()
     {
         $context = $this->argument('context');
+        $expectedResponse = false;
 
         if (($context == null)) {
             $estructureCommand = 'zeta:selecciona-crea-contexto';
-            $this->call($estructureCommand);
-
+            $expectedResponse = $this->call($estructureCommand);
         } else {
             $context = $this->nombreFormateado($context);
             $estructureFolderCommand = 'zeta:contexto-carpetas';
-            $this->call($estructureFolderCommand, ['context' => $context]);
-
+            $expectedResponse = $this->call($estructureFolderCommand, ['context' => $context]);
         }
-        $this->info($context . ' Scaffold correctamente!');
-        return $context;
+        if ($expectedResponse == Command::SUCCESS) {
+            $this->info('Done!');
+            return Command::SUCCESS;
+        }
+        return Command::FAILURE;
     }
-
 }
